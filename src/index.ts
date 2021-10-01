@@ -1,5 +1,7 @@
-import { getResolver } from './resolver'
-
+export { getResolver } from './resolver'
 export {
-  getResolver
-}
+  ConfigurationOptions,
+  InfuraConfiguration,
+  MultiProviderConfiguration,
+  ProviderConfiguration,
+} from './configuration'
