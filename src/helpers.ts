@@ -1,5 +1,3 @@
-import { VerificationMethod } from 'did-resolver'
-
 export const identifierMatcher = /^(.*:)?(.*\.eth)$/
 export const nullAddress = '0x0000000000000000000000000000000000000000'
 export const DEFAULT_JSON_RPC = 'http://127.0.0.1:8545/'
