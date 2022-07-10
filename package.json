@@ -1,6 +1,6 @@
 {
   "name": "ens-did-resolver",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Resolve DID documents for ENS",
   "source": "src/index.ts",
   "main": "lib/index.js",
