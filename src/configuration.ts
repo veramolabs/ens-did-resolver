@@ -42,10 +42,7 @@ function configureNetworksWithInfura(projectId?: string): ConfiguredNetworks {
   }
   const networks: ProviderConfiguration[] = [
     { name: 'mainnet', chainId: '0x1', provider: new InfuraProvider('homestead', projectId) },
-    { name: 'ropsten', chainId: '0x3', provider: new InfuraProvider('ropsten', projectId) },
-    { name: 'rinkeby', chainId: '0x4', provider: new InfuraProvider('rinkeby', projectId) },
     { name: 'goerli', chainId: '0x5', provider: new InfuraProvider('goerli', projectId) },
-    { name: 'kovan', chainId: '0x2a', provider: new InfuraProvider('kovan', projectId) },
   ]
   return configureNetworks({ networks })
 }

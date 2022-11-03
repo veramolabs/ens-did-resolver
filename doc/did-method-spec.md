@@ -45,9 +45,7 @@ Ethereum address, including contracts to allow more advanced models such as mult
 The target system is the Ethereum network where the ERC1056 is deployed. This could either be:
 
 - Mainnet
-- Ropsten
-- Rinkeby
-- Kovan
+- Goerli
 - other EVM-compliant blockchains such as private chains, side-chains, or consortium chains.
 
 ### Advantages

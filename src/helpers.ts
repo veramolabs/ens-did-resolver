@@ -4,10 +4,7 @@ export const DEFAULT_JSON_RPC = 'http://127.0.0.1:8545/'
 
 export const knownInfuraNetworks: Record<string, string> = {
   mainnet: '0x1',
-  ropsten: '0x3',
-  rinkeby: '0x4',
   goerli: '0x5',
-  kovan: '0x2a',
 }
 
 export const knownNetworks: Record<string, string> = {
