@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/veramolabs/ens-did-resolver/compare/1.0.0...1.0.1) (2022-11-03)
+
+
+### Bug Fixes
+
+* remove deprecated testnets ([#12](https://github.com/veramolabs/ens-did-resolver/issues/12)) ([d197b30](https://github.com/veramolabs/ens-did-resolver/commit/d197b307d30be1fe6a89ff7e807bf96ed76c1833))
+
 # 1.0.0 (2022-07-10)
 
 
