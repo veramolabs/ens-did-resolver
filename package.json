@@ -59,8 +59,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.19.6",
-    "@babel/preset-env": "7.19.4",
+    "@babel/core": "7.20.2",
+    "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.18.6",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.1",
@@ -75,9 +75,9 @@
     "ganache-cli": "6.12.2",
     "jest": "27.5.1",
     "microbundle": "0.15.1",
-    "prettier": "2.7.1",
+    "prettier": "2.8.0",
     "semantic-release": "17.4.7",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   },
   "dependencies": {
     "@ethersproject/bignumber": "^5.1.0",
