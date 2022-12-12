@@ -75,9 +75,9 @@
     "ganache-cli": "6.12.2",
     "jest": "27.5.1",
     "microbundle": "0.15.1",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "semantic-release": "17.4.7",
-    "typescript": "4.9.3"
+    "typescript": "4.9.4"
   },
   "dependencies": {
     "@ethersproject/bignumber": "^5.1.0",
