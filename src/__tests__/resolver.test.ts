@@ -1,9 +1,11 @@
 import { DIDDocument, DIDResolutionResult, Resolvable, Resolver } from 'did-resolver'
 import { getResolver } from '../resolver'
-jest.setTimeout(30000)
+
+jest.setTimeout(60000)
 
 describe('ensResolver', () => {
-  beforeAll(async () => {})
+  beforeAll(async () => {
+  })
 
   it('works with single, unnamed network', async () => {
     expect.assertions(1)
@@ -71,8 +73,8 @@ describe('ensResolver', () => {
             id: `${did}#my-key`,
             type: 'X25519KeyAgreementKey2019',
             controller: did,
-            publicKeyMultibase: 'z9hFgmPVfmBZwRvFEyniQDBkz9LmV7gDEqytWyGZLmDXE'
-          }
+            publicKeyMultibase: 'z9hFgmPVfmBZwRvFEyniQDBkz9LmV7gDEqytWyGZLmDXE',
+          },
         ],
         authentication: [`${did}#${ethrAddr}`],
         capabilityDelegation: [`${did}#${ethrAddr}`],
@@ -112,8 +114,8 @@ describe('ensResolver', () => {
             id: `${did}#my-key`,
             type: 'X25519KeyAgreementKey2019',
             controller: did,
-            publicKeyMultibase: 'z9hFgmPVfmBZwRvFEyniQDBkz9LmV7gDEqytWyGZLmDXE'
-          }
+            publicKeyMultibase: 'z9hFgmPVfmBZwRvFEyniQDBkz9LmV7gDEqytWyGZLmDXE',
+          },
         ],
         authentication: [`${did}#${ethrAddr}`],
         capabilityDelegation: [`${did}#${ethrAddr}`],
@@ -128,21 +130,27 @@ describe('ensResolver', () => {
 
   it('works fails trying to goerli name on mainnet', async () => {
     expect.assertions(1)
-    let didResolver: Resolvable = new Resolver(getResolver({ rpcUrl: 'https://mainnet.infura.io/v3/e471b8639c314004ae67ec0078f70102' }))
+    let didResolver: Resolvable = new Resolver(
+      getResolver({ rpcUrl: 'https://mainnet.infura.io/v3/e471b8639c314004ae67ec0078f70102' })
+    )
     const did = 'did:ens:goerli:whatever.eth'
     const resolutionResult = await didResolver.resolve(did)
-    expect(resolutionResult.didResolutionMetadata.error).toEqual("unknownNetwork")
+    expect(resolutionResult.didResolutionMetadata.error).toEqual('unknownNetwork')
   })
 
   it('multi provider config', async () => {
     expect.assertions(2)
-    let didResolver: Resolvable = new Resolver(getResolver({ networks: [
-      { name: 'goerli', rpcUrl: 'https://goerli.infura.io/v3/e471b8639c314004ae67ec0078f70102' },
-      { rpcUrl: 'https://mainnet.infura.io/v3/e471b8639c314004ae67ec0078f70102' }
-    ]}))
+    let didResolver: Resolvable = new Resolver(
+      getResolver({
+        networks: [
+          { name: 'goerli', rpcUrl: 'https://goerli.infura.io/v3/e471b8639c314004ae67ec0078f70102' },
+          { rpcUrl: 'https://mainnet.infura.io/v3/e471b8639c314004ae67ec0078f70102' },
+        ],
+      })
+    )
     const did = 'did:ens:goerli:whatever.eth'
     const resolutionResult = await didResolver.resolve(did)
-    expect(resolutionResult.didDocument?.id).toEqual("did:ens:goerli:whatever.eth")
+    expect(resolutionResult.didDocument?.id).toEqual('did:ens:goerli:whatever.eth')
 
     const resolutionResult2 = await didResolver.resolve('did:ens:vitalik.eth')
     expect(resolutionResult2.didDocument?.id).toEqual('did:ens:vitalik.eth')

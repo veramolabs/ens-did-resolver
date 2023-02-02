@@ -1,12 +1,5 @@
 import { EnsResolver, Provider, Web3Provider } from '@ethersproject/providers'
-import {
-  DIDDocument,
-  DIDResolutionResult,
-  DIDResolver,
-  ParsedDID,
-  ServiceEndpoint,
-  VerificationMethod,
-} from 'did-resolver'
+import { DIDDocument, DIDResolutionResult, DIDResolver, ParsedDID, Service, VerificationMethod } from 'did-resolver'
 import { ConfigurationOptions, configureResolverWithNetworks } from './configuration'
 import { Errors, identifierMatcher, isDefined } from './helpers'
 
@@ -126,7 +119,7 @@ export function getResolver(config?: ConfigurationOptions): Record<string, DIDRe
       return [...methodLinks, ...fullMethods]
     }
 
-    const services = (await getEnsRecord<ServiceEndpoint[]>(ensResolver, 'org.w3c.did.service')) || []
+    const services = (await getEnsRecord<Service[]>(ensResolver, 'org.w3c.did.service')) || []
     if (services) {
       if (didDocument) {
         didDocument.service = [...(didDocument.service || []), ...services].filter(isDefined)

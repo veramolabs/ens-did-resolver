@@ -20,8 +20,8 @@ export const knownNetworks: Record<string, string> = {
 export enum Errors {
   /**
    * The resolver has failed to construct the DID document.
-   * This can be caused by a network issue, a wrong registry address or malformed logs while parsing the registry history.
-   * Please inspect the `DIDResolutionMetadata.message` to debug further.
+   * This can be caused by a network issue, a wrong registry address or malformed logs while parsing the registry
+   * history. Please inspect the `DIDResolutionMetadata.message` to debug further.
    */
   notFound = 'notFound',
 
