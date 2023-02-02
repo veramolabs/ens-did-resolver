@@ -20,6 +20,7 @@ export interface ProviderConfiguration {
   chainId?: string | number
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   web3?: any
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [index: string]: any
 }
@@ -91,7 +92,8 @@ function configureNetworks(conf: MultiProviderConfiguration): ConfiguredNetworks
  * @returns a record of providers
  * @param conf configuration options for the resolver. An array of network details.
  * Each network entry should contain at least one of `name` or `chainId` AND one of `provider`, `web3`, or `rpcUrl`
- * For convenience, you can also specify an `infuraProjectId` which will create a mapping for all the networks supported by https://infura.io.
+ * For convenience, you can also specify an `infuraProjectId` which will create a mapping for all the networks
+ *   supported by https://infura.io.
  * @example ```js
  * [
  *   { name: 'development', rpcUrl: 'http://127.0.0.1:8545/' },
