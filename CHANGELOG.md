@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/veramolabs/ens-did-resolver/compare/1.0.1...1.0.2) (2023-02-02)
+
+
+### Bug Fixes
+
+* fix corner case when ENS resolver is unknown ([c1f8d6f](https://github.com/veramolabs/ens-did-resolver/commit/c1f8d6fd5b21c57e17bfc06fe063f02962404d70))
+* **deps:** fix breaking changes from did-resolver v4 ([eed4441](https://github.com/veramolabs/ens-did-resolver/commit/eed4441565b131e7ea6cd7aec7e20b72c69e8bbd))
+* **deps:** Update dependency did-resolver to v4 ([a0a5488](https://github.com/veramolabs/ens-did-resolver/commit/a0a5488d95b06c2450d7b168f4275338d72beffd))
+
 ## [1.0.1](https://github.com/veramolabs/ens-did-resolver/compare/1.0.0...1.0.1) (2022-11-03)
 
 
