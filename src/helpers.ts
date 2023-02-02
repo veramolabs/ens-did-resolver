@@ -34,6 +34,11 @@ export enum Errors {
    * The resolver is misconfigured or is being asked to resolve a DID anchored on an unknown network
    */
   unknownNetwork = 'unknownNetwork',
+
+  /**
+   * The resolver is being asked to resolve a DID anchored on a network without a known ENS resolver.
+   */
+  unknownEnsResolver = 'unknownEnsResolver',
 }
 
 export function isDefined<T>(arg: T): arg is Exclude<T, null | undefined> {

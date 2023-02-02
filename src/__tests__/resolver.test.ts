@@ -4,8 +4,7 @@ import { getResolver } from '../resolver'
 jest.setTimeout(60000)
 
 describe('ensResolver', () => {
-  beforeAll(async () => {
-  })
+  beforeAll(async () => {})
 
   it('works with single, unnamed network', async () => {
     expect.assertions(1)

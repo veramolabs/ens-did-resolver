@@ -35,7 +35,17 @@ export function getResolver(config?: ConfigurationOptions): Record<string, DIDRe
         didDocument: null,
       }
     }
-    const ensResolver: EnsResolver = await (provider as Web3Provider).getResolver(ensName)
+    const ensResolver: EnsResolver | null = await (provider as Web3Provider).getResolver(ensName)
+    if (!ensResolver) {
+      return {
+        didResolutionMetadata: {
+          error: Errors.unknownEnsResolver,
+          message: `This network (${networkCode}), required by ${parsed.id}, does not have a known ENS resolver`,
+        },
+        didDocumentMetadata: {},
+        didDocument: null,
+      }
+    }
     let err: string | null = null
     let address: string | null = null
     try {
@@ -50,7 +60,6 @@ export function getResolver(config?: ConfigurationOptions): Record<string, DIDRe
     if (address) {
       const chainId = (await provider.getNetwork()).chainId
       const blockchainAccountId = `${address}@eip155:${chainId}`
-      // FIXME: TODO:
       const postfix = address
 
       // setup default did doc
