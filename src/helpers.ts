@@ -26,7 +26,7 @@ export enum Errors {
   notFound = 'notFound',
 
   /**
-   * The resolver does not know how to resolve the given DID. Most likely it is not a `did:ethr`.
+   * The resolver does not know how to resolve the given DID. Most likely it is not a `did:ens`.
    */
   invalidDid = 'invalidDid',
 
