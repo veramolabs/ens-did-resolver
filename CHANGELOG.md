@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/veramolabs/ens-did-resolver/compare/1.0.2...1.0.3) (2023-03-22)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency did-resolver to v4.1.0 ([ef637fb](https://github.com/veramolabs/ens-did-resolver/commit/ef637fb2e3db1ffde82a905b9d6d8046a0de27ac))
+
 ## [1.0.2](https://github.com/veramolabs/ens-did-resolver/compare/1.0.1...1.0.2) (2023-02-02)
 
 
