@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/veramolabs/ens-did-resolver/compare/1.0.3...1.0.4) (2023-03-23)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies to v5.7.0 ([d2f94fd](https://github.com/veramolabs/ens-did-resolver/commit/d2f94fd4382bb4a18a8fda91bb0cc248ead7e476))
+
 ## [1.0.3](https://github.com/veramolabs/ens-did-resolver/compare/1.0.2...1.0.3) (2023-03-22)
 
 
