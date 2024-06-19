@@ -1,4 +1,4 @@
-import { EnsResolver, Provider, Web3Provider } from '@ethersproject/providers'
+import type { EnsResolver, Provider, AbstractProvider } from 'ethers'
 import { DIDDocument, DIDResolutionResult, DIDResolver, ParsedDID, Service, VerificationMethod } from 'did-resolver'
 import { ConfigurationOptions, configureResolverWithNetworks } from './configuration'
 import { Errors, identifierMatcher, isDefined } from './helpers'
@@ -35,7 +35,9 @@ export function getResolver(config?: ConfigurationOptions): Record<string, DIDRe
         didDocument: null,
       }
     }
-    const ensResolver: EnsResolver | null = await (provider as Web3Provider).getResolver(ensName)
+
+    const ensResolver: EnsResolver | null =
+      'getResolver' in provider ? await (provider as AbstractProvider).getResolver(ensName) : null
     if (!ensResolver) {
       return {
         didResolutionMetadata: {

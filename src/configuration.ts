@@ -1,5 +1,4 @@
-import { BigNumber } from '@ethersproject/bignumber'
-import { InfuraProvider, JsonRpcProvider, Provider } from '@ethersproject/providers'
+import { InfuraProvider, JsonRpcProvider, Provider } from 'ethers'
 import { knownInfuraNetworks, knownNetworks } from './helpers'
 
 /**
@@ -53,7 +52,7 @@ export function getProviderForNetwork(conf: ProviderConfiguration): Provider {
   if (!provider) {
     if (conf.rpcUrl) {
       const chainIdRaw = conf.chainId ? conf.chainId : knownNetworks[conf.name || '']
-      const chainId = chainIdRaw ? BigNumber.from(chainIdRaw).toNumber() : chainIdRaw
+      const chainId = chainIdRaw ? Number(BigInt(chainIdRaw)) : chainIdRaw
       const networkName = knownInfuraNetworks[conf.name || ''] ? conf.name?.replace('mainnet', 'homestead') : 'any'
       provider = new JsonRpcProvider(conf.rpcUrl, chainId || networkName)
     } else {
